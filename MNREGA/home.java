@@ -113,8 +113,9 @@ class JHome{
       											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" }
       										};
 
-   							 Object columnNames[] = { "No", "Project Name","BDO Head Name" ,"Project Number", "Date of Issue", "Ponchayet Name", 
-   							 						"Ponchayet Head_name", "Money", "End Date" ,};
+   							 Object columnNames[] = { "No", "Project Name","BDO Head Name"};
+
+   							 
     						JTable table = new JTable(rowData, columnNames);
 
     						JScrollPane scrollPane = new JScrollPane(table);
