@@ -4,6 +4,8 @@ import java.awt.event.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
 
+
+
 class JError{
 
 	public void login_error(){
@@ -33,12 +35,16 @@ class JHome{
 				JFrame frame = new JFrame("The Mahatma Gandhi National Rural Employment Guarantee Act");
 				
 				JLabel login_emailid = new JLabel("Email Id");
-				JLabel login_password = new JLabel("Passwotrd");
+				JLabel login_password = new JLabel("Password");
+
+
 				JTextField login_text_emailid = new JTextField("Email Id");
+				JTextField search_p = new JTextField("Enter Panchayet name");
 				JPasswordField login_text_password = new JPasswordField("Password");
 				JButton login_btn = new JButton("Login");
 				JButton back = new JButton("Back");
 				JButton ctrate_project = new JButton("Create Project");
+				JButton search_button = new JButton("Search");
 
 
 				String username="admin";
@@ -71,6 +77,32 @@ class JHome{
 				frame.add(ctrate_project);
 				ctrate_project.setVisible(false);
 
+				search_p.setBounds(230,70,300,30);
+				frame.add(search_p);
+				search_p.setVisible(false);
+
+				search_button.setBounds(550,65,100,40);
+				frame.add(search_button);
+				search_button.setVisible(false);
+
+
+				//exp
+							Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
+      											  { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
+   							 Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+    						JTable table = new JTable(rowData, columnNames);
+
+    						JScrollPane scrollPane = new JScrollPane(table);
+    						frame.add(scrollPane, BorderLayout.SOUTH);;
+    						scrollPane.setVisible(false);
+    						scrollPane.setSize(200,200);
+
+
+
+				///end exp
+
+
+
 				
 				//action listener
 				MouseAdapter login_listener = new MouseAdapter(){
@@ -98,6 +130,12 @@ class JHome{
 							login_btn.setVisible(false);
 							back.setVisible(true);
 							ctrate_project.setVisible(true);
+							search_p.setVisible(true);
+							search_button.setVisible(true);
+							scrollPane.setVisible(true);
+						}
+						else if("".equals(login_text_emailid.getText())){
+							System.out.println("blank");
 						}
 						else{
 							System.out.println("Errot:");
@@ -116,6 +154,9 @@ class JHome{
 						login_btn.setVisible(true);
 						back.setVisible(false);
 						ctrate_project.setVisible(false);
+						search_p.setVisible(false);
+						search_button.setVisible(false);
+						scrollPane.setVisible(false);
 					}
 				};
 
