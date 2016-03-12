@@ -87,15 +87,40 @@ class JHome{
 
 
 				//exp
-							Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-      											  { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
-   							 Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+							Object rowData[][] = { 
+												   { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" }
+      										};
+
+   							 Object columnNames[] = { "No", "Project Name","BDO Head Name" ,"Project Number", "Date of Issue", "Ponchayet Name", 
+   							 						"Ponchayet Head_name", "Money", "End Date" ,};
     						JTable table = new JTable(rowData, columnNames);
 
     						JScrollPane scrollPane = new JScrollPane(table);
     						frame.add(scrollPane, BorderLayout.SOUTH);;
     						scrollPane.setVisible(false);
-    						scrollPane.setSize(200,200);
+    						scrollPane.setBounds(100,180,700,300);
 
 
 
