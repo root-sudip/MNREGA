@@ -186,20 +186,30 @@ class JHome{
 					}
 				};
 
+				
+
+
+				//create project 
 				ActionListener listener_create_p = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
 						back.setVisible(false);
+						back.setVisible(false);
 						ctrate_project.setVisible(false);
+						search_p.setVisible(false);
+						search_button.setVisible(false);
+						scrollPane.setVisible(false);
 					}
 				};
 
 
 
+				//end create project 
 				login_text_emailid.addMouseListener(login_listener);
 				login_text_password.addMouseListener(password_listener);
 				login_btn.addActionListener(listener);
 				back.addActionListener(listener_back);
 				ctrate_project.addActionListener(listener_create_p);
+				
 				
 				
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
