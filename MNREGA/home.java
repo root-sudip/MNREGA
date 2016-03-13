@@ -45,6 +45,7 @@ class JHome{
 				JButton back = new JButton("Back");
 				JButton ctrate_project = new JButton("Create Project");
 				JButton search_button = new JButton("Search");
+				JButton p_back = new JButton("Back");
 
 
 				String username="admin";
@@ -84,6 +85,10 @@ class JHome{
 				search_button.setBounds(550,65,100,40);
 				frame.add(search_button);
 				search_button.setVisible(false);
+
+				p_back.setBounds(380,30,120,20);
+				frame.add(p_back);
+				p_back.setVisible(false);
 
 
 				//exp
@@ -145,6 +150,15 @@ class JHome{
 					
 				};
 
+
+				MouseAdapter search_listener = new MouseAdapter(){
+					public void mouseClicked(MouseEvent e){
+						search_p.setText("");
+					}
+					
+				};
+
+
 				ActionListener listener = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
 						if(username.equals(login_text_emailid.getText()) && password.equals(login_text_password.getText())){
@@ -193,11 +207,23 @@ class JHome{
 				ActionListener listener_create_p = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
 						back.setVisible(false);
-						back.setVisible(false);
 						ctrate_project.setVisible(false);
 						search_p.setVisible(false);
 						search_button.setVisible(false);
 						scrollPane.setVisible(false);
+						p_back.setVisible(true);
+					}
+				};
+
+				ActionListener create_p_back = new ActionListener(){
+					public void actionPerformed(ActionEvent e){
+						back.setVisible(true);
+						ctrate_project.setVisible(true);
+						search_p.setVisible(true);
+						search_button.setVisible(true);
+						scrollPane.setVisible(true);
+						p_back.setVisible(false);
+
 					}
 				};
 
@@ -206,10 +232,12 @@ class JHome{
 				//end create project 
 				login_text_emailid.addMouseListener(login_listener);
 				login_text_password.addMouseListener(password_listener);
+				search_p.addMouseListener(search_listener);
 				login_btn.addActionListener(listener);
 				back.addActionListener(listener_back);
 				ctrate_project.addActionListener(listener_create_p);
-				
+				p_back.addActionListener(create_p_back);
+
 				
 				
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
