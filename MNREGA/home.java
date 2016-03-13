@@ -241,7 +241,6 @@ class JHome{
 				
 				
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				//frame.setLayout(new GridLayout(6,7));
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				frame.setResizable(false);	
