@@ -10,7 +10,7 @@ class JError{
 
 	public void login_error(){
 		JPanel panel = new JPanel();
-		JLabel error_label= new JLabel("Enter correct email id or password");
+		JLabel error_label= new JLabel("Enter correct email Id or Password");
 		JFrame mm = new JFrame();
 
 		mm.setLayout(null);
