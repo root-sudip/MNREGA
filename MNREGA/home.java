@@ -97,17 +97,7 @@ class JHome{
 				p_back.setBounds(380,30,120,20);
 				frame.add(p_back);
 				p_back.setVisible(false);
-
-				/*
-				JTextField project_name = new JTextField();
-				JTextField signed_BDO_Name = new JTextField();
-				JTextField date_Of_Issue = new JTextField();
-				JTextField panchayat_Name = new JTextField();
-				JTextField recived_Panchayat_member_name = new JTextField();
-				JTextField money = new JTextField();
-				JTextField duration = new JTextField();
-
-				*/
+				
 
 				project_name.setBounds()
 				frame.add(project_name);
