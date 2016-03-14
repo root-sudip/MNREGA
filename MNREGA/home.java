@@ -107,31 +107,31 @@ class JHome{
 				p_back.setVisible(false);
 
 
-				project_name.setBounds(400,100,240,40);
+				project_name.setBounds(500,100,240,40);
 				frame.add(project_name);
 				project_name.setVisible(false);
 
-				signed_BDO_Name.setBounds(400,150,240,40);
+				signed_BDO_Name.setBounds(500,150,240,40);
 				frame.add(signed_BDO_Name);
 				signed_BDO_Name.setVisible(false);
 
-				date_Of_Issue.setBounds(400,200,240,40);	
+				date_Of_Issue.setBounds(500,200,240,40);	
 				frame.add(date_Of_Issue);
 				date_Of_Issue.setVisible(false);
 
-				panchayat_Name.setBounds(400,250,240,40);
+				panchayat_Name.setBounds(500,250,240,40);
 				frame.add(panchayat_Name);
 				panchayat_Name.setVisible(false);
 
-				recived_Panchayat_member_name.setBounds(400,300,240,40);
+				recived_Panchayat_member_name.setBounds(500,300,240,40);
 				frame.add(recived_Panchayat_member_name);
 				recived_Panchayat_member_name.setVisible(false);
 
-				money.setBounds(400,350,240,40);
+				money.setBounds(500,350,240,40);
 				frame.add(money);
 				money.setVisible(false);
 
-				duration.setBounds(400,400,240,40);
+				duration.setBounds(500,400,240,40);
 				frame.add(duration);
 				duration.setVisible(false);
 
