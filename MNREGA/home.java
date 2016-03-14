@@ -63,6 +63,8 @@ class JHome{
 				JLabel l_money = new JLabel("Money");
 				JLabel l_duration = new JLabel("Duration");
 
+				JButton project_submit = new JButton("Submit");
+
 
 				String username="admin";
 				String password="pass";
@@ -135,33 +137,37 @@ class JHome{
 				frame.add(duration);
 				duration.setVisible(false);
 
-				l_project_name.setBounds(200,100,200,40);
+				l_project_name.setBounds(200,100,300,40);
 				frame.add(l_project_name);
-				l_project_name.setVisible(true);
+				l_project_name.setVisible(false);
 
-				l_signed_BDO_Name.setBounds(200,150,200,40);
+				l_signed_BDO_Name.setBounds(200,150,300,40);
 				frame.add(l_signed_BDO_Name);
 				l_signed_BDO_Name.setVisible(false);
 
-				l_date_Of_Issue.setBounds(200,200,200,40);
+				l_date_Of_Issue.setBounds(200,200,300,40);
 				frame.add(l_date_Of_Issue);
 				l_date_Of_Issue.setVisible(false);
 
-				l_panchayat_Name.setBounds(200,250,200,40);
+				l_panchayat_Name.setBounds(200,250,300,40);
 				frame.add(l_panchayat_Name);
 				l_panchayat_Name.setVisible(false);
 
-				l_recived_Panchayat_member_name.setBounds(200,300,200,40);
+				l_recived_Panchayat_member_name.setBounds(200,300,300,40);
 				frame.add(l_recived_Panchayat_member_name);
 				l_recived_Panchayat_member_name.setVisible(false);
 
-				l_money.setBounds(200,350,200,40);
+				l_money.setBounds(200,350,300,40);
 				frame.add(l_money);
 				l_money.setVisible(false);
 
-				l_duration.setBounds(200,400,200,40);
+				l_duration.setBounds(200,400,300,40);
 				frame.add(l_duration);
 				l_duration.setVisible(false);
+
+				project_submit.setBounds(350,500,200,40);
+				frame.add(project_submit);
+				project_submit.setVisible(false);
 
 
 
@@ -302,6 +308,7 @@ class JHome{
 						l_recived_Panchayat_member_name.setVisible(true);
 						l_money.setVisible(true);
 						l_duration.setVisible(true);
+						project_submit.setVisible(true);
 					}
 				};
 
@@ -329,6 +336,7 @@ class JHome{
 						l_recived_Panchayat_member_name.setVisible(false);
 						l_money.setVisible(false);
 						l_duration.setVisible(false);
+						project_submit.setVisible(false);
 
 					}
 				};
