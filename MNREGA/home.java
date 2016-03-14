@@ -55,13 +55,13 @@ class JHome{
 				JTextField money = new JTextField();
 				JTextField duration = new JTextField();
 
-				JLabel l_project_name = new JLabel();
-				JLabel l_signed_BDO_Name = new JLabel();
-				JLabel l_date_Of_Issue = new JLabel();
-				JLabel l_panchayat_Name = new JLabel();
-				JLabel l_recived_Panchayat_member_name = new JLabel();
-				JLabel l_money = new JLabel();
-				JLabel l_duration = new JLabel();
+				JLabel l_project_name = new JLabel("Project Name");
+				JLabel l_signed_BDO_Name = new JLabel("BDO Signed Name");
+				JLabel l_date_Of_Issue = new JLabel("Date of Issue");
+				JLabel l_panchayat_Name = new JLabel("Panchayat Name");
+				JLabel l_recived_Panchayat_member_name = new JLabel("Recived Pamchayat Member Name");
+				JLabel l_money = new JLabel("Money");
+				JLabel l_duration = new JLabel("Duration");
 
 
 				String username="admin";
@@ -135,8 +135,9 @@ class JHome{
 				frame.add(duration);
 				duration.setVisible(false);
 
-				l_project_name.setBounds(300,100,100,40);
+				l_project_name.setBounds(100,100,100,40);
 				frame.add(l_project_name);
+				l_project_name.setVisible(true);
 
 				//l_signed_BDO_Name.setBounds();
 				frame.add(l_signed_BDO_Name);
@@ -286,6 +287,7 @@ class JHome{
 						recived_Panchayat_member_name.setVisible(true);
 						money.setVisible(true);
 						duration.setVisible(true);
+						l_project_name.setVisible(true);
 					}
 				};
 
@@ -304,6 +306,7 @@ class JHome{
 						recived_Panchayat_member_name.setVisible(false);
 						money.setVisible(false);
 						duration.setVisible(false);
+						l_project_name.setVisible(false);
 
 					}
 				};
