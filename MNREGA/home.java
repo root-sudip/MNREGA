@@ -135,19 +135,25 @@ class JHome{
 				frame.add(duration);
 				duration.setVisible(false);
 
-				l_project_name.setBounds();
+				l_project_name.setBounds(300,100,100,40);
 				frame.add(l_project_name);
-				l_signed_BDO_Name.setBounds();
+
+				//l_signed_BDO_Name.setBounds();
 				frame.add(l_signed_BDO_Name);
-				l_date_Of_Issue.setBounds();
+
+				//l_date_Of_Issue.setBounds();
 				frame.add(l_date_Of_Issue);
-				l_panchayat_Name.setBounds();
+
+				//l_panchayat_Name.setBounds();
 				frame.add(l_panchayat_Name);
-				l_recived_Panchayat_member_name.setBounds();
+
+				//l_recived_Panchayat_member_name.setBounds();
 				frame.add(l_recived_Panchayat_member_name);
-				l_money.setBounds();
+
+				//l_money.setBounds();
 				frame.add(l_money);
-				l_duration.setBounds();
+
+				//l_duration.setBounds();
 				frame.add(l_duration);
 
 
