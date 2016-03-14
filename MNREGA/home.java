@@ -294,6 +294,14 @@ class JHome{
 						money.setVisible(true);
 						duration.setVisible(true);
 						l_project_name.setVisible(true);
+						duration.setVisible(true);
+						l_project_name.setVisible(true);
+						l_signed_BDO_Name.setVisible(true);
+						l_date_Of_Issue.setVisible(true);
+						l_panchayat_Name.setVisible(true);
+						l_recived_Panchayat_member_name.setVisible(true);
+						l_money.setVisible(true);
+						l_duration.setVisible(true);
 					}
 				};
 
@@ -313,6 +321,14 @@ class JHome{
 						money.setVisible(false);
 						duration.setVisible(false);
 						l_project_name.setVisible(false);
+						duration.setVisible(false);
+						l_project_name.setVisible(true);
+						l_signed_BDO_Name.setVisible(false);
+						l_date_Of_Issue.setVisible(false);
+						l_panchayat_Name.setVisible(false);
+						l_recived_Panchayat_member_name.setVisible(false);
+						l_money.setVisible(false);
+						l_duration.setVisible(false);
 
 					}
 				};
