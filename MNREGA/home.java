@@ -250,13 +250,13 @@ class JHome{
 						search_button.setVisible(false);
 						scrollPane.setVisible(false);
 						p_back.setVisible(true);
-						project_name.setVisible();
-						signed_BDO_Name.setVisible();
-						date_Of_Issue.setVisible();
-						panchayat_Name.setVisible();
-						recived_Panchayat_member_name.setVisible();
-						money.setVisible();
-						duration.setVisible();
+						project_name.setVisible(true);
+						signed_BDO_Name.setVisible(true);
+						date_Of_Issue.setVisible(true);
+						panchayat_Name.setVisible(true);
+						recived_Panchayat_member_name.setVisible(true);
+						money.setVisible(true);
+						duration.setVisible(true);
 					}
 				};
 
@@ -268,6 +268,13 @@ class JHome{
 						search_button.setVisible(true);
 						scrollPane.setVisible(true);
 						p_back.setVisible(false);
+						project_name.setVisible(true);
+						signed_BDO_Name.setVisible(true);
+						date_Of_Issue.setVisible(true);
+						panchayat_Name.setVisible(true);
+						recived_Panchayat_member_name.setVisible(true);
+						money.setVisible(true);
+						duration.setVisible(true);
 
 					}
 				};
