@@ -250,6 +250,13 @@ class JHome{
 						search_button.setVisible(false);
 						scrollPane.setVisible(false);
 						p_back.setVisible(true);
+						project_name.setVisible();
+						signed_BDO_Name.setVisible();
+						date_Of_Issue.setVisible();
+						panchayat_Name.setVisible();
+						recived_Panchayat_member_name.setVisible();
+						money.setVisible();
+						duration.setVisible();
 					}
 				};
 
