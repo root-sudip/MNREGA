@@ -55,6 +55,14 @@ class JHome{
 				JTextField money = new JTextField();
 				JTextField duration = new JTextField();
 
+				JLabel l_project_name = new JLabel();
+				JLabel l_signed_BDO_Name = new JLabel();
+				JLabel l_date_Of_Issue = new JLabel();
+				JLabel l_panchayat_Name = new JLabel();
+				JLabel l_recived_Panchayat_member_name = new JLabel();
+				JLabel l_money = new JLabel();
+				JLabel l_duration = new JLabel();
+
 
 				String username="admin";
 				String password="pass";
