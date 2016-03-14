@@ -47,6 +47,14 @@ class JHome{
 				JButton search_button = new JButton("Search");
 				JButton p_back = new JButton("Back");
 
+				JTextField project_name = new JTextField();
+				JTextField signed_BDO_Name = new JTextField();
+				JTextField date_Of_Issue = new JTextField();
+				JTextField panchayat_Name = new JTextField();
+				JTextField recived_Panchayat_member_name = new JTextField();
+				JTextField money = new JTextField();
+				JTextField duration = new JTextField();
+
 
 				String username="admin";
 				String password="pass";
@@ -89,6 +97,34 @@ class JHome{
 				p_back.setBounds(380,30,120,20);
 				frame.add(p_back);
 				p_back.setVisible(false);
+
+				/*
+				JTextField project_name = new JTextField();
+				JTextField signed_BDO_Name = new JTextField();
+				JTextField date_Of_Issue = new JTextField();
+				JTextField panchayat_Name = new JTextField();
+				JTextField recived_Panchayat_member_name = new JTextField();
+				JTextField money = new JTextField();
+				JTextField duration = new JTextField();
+
+				*/
+
+				project_name.setBounds()
+				frame.add(project_name);
+
+				signed_BDO_Name.setBounds();
+
+
+				date_Of_Issue.setBounds();
+
+				panchayat_Name.setBounds();
+
+				recived_Panchayat_member_name.setBounds();
+
+				money.setBounds();
+
+				duration.setBounds();
+
 
 
 				//exp
