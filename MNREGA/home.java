@@ -21,7 +21,7 @@ class JError{
 		mm.setSize(350,100);
 	}	
 }
- 
+
 class JHome{
 	private static JHome home_obj = new JHome();
 	private JHome(){}
