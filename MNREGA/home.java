@@ -28,7 +28,7 @@ class JHome{
 	public static JHome getInstance(){
 			return home_obj;
 	}
-	
+
 	Runnable runner = new Runnable(){
 			public void run(){
 				JFrame frame = new JFrame("The Mahatma Gandhi National Rural Employment Guarantee Act");
