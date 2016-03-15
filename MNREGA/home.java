@@ -5,7 +5,6 @@ import javax.swing.event.*;
 import javax.swing.text.*;
 
 
-
 class JError{
 
 	public void login_error(){
@@ -68,6 +67,7 @@ class JHome{
 
 				String username="admin";
 				String password="pass";
+
 
 				frame.setLayout(null);
 				
