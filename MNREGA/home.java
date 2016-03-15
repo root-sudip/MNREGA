@@ -27,7 +27,7 @@ class JHome{
 	private JHome(){}
 	public static JHome getInstance(){
 			return home_obj;
-	} 
+	}
 
 	Runnable runner = new Runnable(){
 			public void run(){
