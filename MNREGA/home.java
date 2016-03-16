@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
+import java.sql.*;
 
 class JError{
 
@@ -342,8 +343,20 @@ class JHome{
 //java jdbc conntion ....insert the data to the database after clicking to the submit bttn
 
 				ActionListener project_submit_listener = new ActionListener(){
-					public void actionperformed(ActionEvent e){
-						
+					public void actionPerformed(ActionEvent e){
+						/*String u_name_mysql = "root";
+						String pass_mysql = "sudipdas";
+						String driver_url = "com.mysql.jdbc.Driver";
+						String db_url = "jdbc:mysql://localhost:3306/MNREGA";
+						Connection conn= null;
+
+						try{
+							Class.forName(driver_url).newInstance();
+							conn = DriverManager.getConnection(db_url,u_name_mysql,pass_mysql);
+							System.out.println("Database connected");
+						}
+						catch(Exception ex){}*/
+						System.out.println("clicked");
 					}
 				};
 
