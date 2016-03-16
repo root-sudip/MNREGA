@@ -340,7 +340,7 @@ class JHome{
 					}
 				};
 
-//java jdbc conntion ....insert the data to the database after clicking to the submit bttn
+//java jdbc conntion ....insert data to the database after clicking to the submit bttn
 
 				ActionListener project_submit_listener = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
@@ -350,11 +350,27 @@ class JHome{
 						String db_url = "jdbc:mysql://localhost:3306/MNREGA";
 						Connection conn= null;
 						Statement stmt = null;
+						String p_n;
+						String bdo_s_n;
+						String d_o_i;
+						String pa_n;
+						String r_p_m_n;
+						int m;
+
+						p_n = project_name.getText();
+						bdo_s_n = signed_BDO_Name.getText();
+						d_o_i = date_Of_Issue.getText();
+						pa_n = panchayat_Name.getText();
+						r_p_m_n = recived_Panchayat_member_name.getText();
+						m = String.valueOf(money.getText());
 
 						try{
 							Class.forName(driver_url).newInstance();
 							conn = DriverManager.getConnection(db_url,u_name_mysql,pass_mysql);
 							System.out.println("Database connected Successfully.");
+							System.out.println("Inserting");
+							stmt = conn.createStatement();
+		//incomplete					String sql = "insert into project_by_BDO (Project_Name,Signed_BDO_Name,)"
 
 							conn.close();
 						}
