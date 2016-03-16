@@ -339,6 +339,10 @@ class JHome{
 					}
 				};
 
+//java jdbc conntion ....insert the data to the database after clicking to the submit bttn
+
+
+
 
 
 				//end create project 
@@ -349,6 +353,7 @@ class JHome{
 				back.addActionListener(listener_back);
 				ctrate_project.addActionListener(listener_create_p);
 				p_back.addActionListener(create_p_back);
+				project_submit.addActionListener(project_submit_listener);
 
 				
 				
