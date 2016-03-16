@@ -370,7 +370,7 @@ class JHome{
 							System.out.println("Database connected Successfully.");
 							System.out.println("Inserting");
 							stmt = conn.createStatement();
-							String sql = "insert into project_by_BDO (Project_Name,Signed_BDO_Name,Panchayat_Name,Recived_Panchayat_member_name,Money)values('"+p_n+"','"+bdo_s_n+"','"+pa_n+"','"+r_p_m_n+"','"+m+"');";
+							String sql = "insert into project_by_BDO (Project_Name,Signed_BDO_Name,Date_Of_Issue,Panchayat_Name,Recived_Panchayat_member_name,Money)values('"+p_n+"','"+bdo_s_n+"','"+d_o_i+"','"+pa_n+"','"+r_p_m_n+"','"+m+"');";
 							stmt.executeUpdate(sql);
 							System.out.println("Submit successfully.");
 
