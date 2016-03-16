@@ -4,7 +4,6 @@ import java.awt.event.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
 
-
 class JError{
 
 	public void login_error(){
