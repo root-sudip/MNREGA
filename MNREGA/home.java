@@ -344,23 +344,26 @@ class JHome{
 
 				ActionListener project_submit_listener = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
-						/*String u_name_mysql = "root";
+						String u_name_mysql = "root";
 						String pass_mysql = "sudipdas";
 						String driver_url = "com.mysql.jdbc.Driver";
 						String db_url = "jdbc:mysql://localhost:3306/MNREGA";
 						Connection conn= null;
+						Statement stmt = null;
 
 						try{
 							Class.forName(driver_url).newInstance();
 							conn = DriverManager.getConnection(db_url,u_name_mysql,pass_mysql);
-							System.out.println("Database connected");
+							System.out.println("Database connected Successfully.");
+
+							conn.close();
 						}
-						catch(Exception ex){}*/
-						System.out.println("clicked");
+						catch(Exception ex){
+							ex.printStackTrace();
+						}
+
 					}
 				};
-
-
 
 				//end create project 
 				login_text_emailid.addMouseListener(login_listener);
