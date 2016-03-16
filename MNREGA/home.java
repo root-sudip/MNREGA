@@ -52,7 +52,7 @@ class JHome{
 				JTextField recived_Panchayat_member_name = new JTextField();
 				JTextField money = new JTextField();
 				JTextField duration = new JTextField();
-
+ 
 				JLabel l_project_name = new JLabel("Project Name");
 				JLabel l_signed_BDO_Name = new JLabel("BDO Signed Name");
 				JLabel l_date_Of_Issue = new JLabel("Date of Issue");
