@@ -34,7 +34,7 @@ class JHome{
 				
 				JLabel login_emailid = new JLabel("Email Id");
 				JLabel login_password = new JLabel("Password");
- 
+
 
 				JTextField login_text_emailid = new JTextField("Email Id");
 				JTextField search_p = new JTextField("Enter Panchayet name");
