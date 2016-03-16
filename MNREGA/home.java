@@ -327,7 +327,7 @@ class JHome{
 						duration.setVisible(false);
 						l_project_name.setVisible(false);
 						duration.setVisible(false);
-						l_project_name.setVisible(true);
+						l_project_name.setVisible(false);
 						l_signed_BDO_Name.setVisible(false);
 						l_date_Of_Issue.setVisible(false);
 						l_panchayat_Name.setVisible(false);
