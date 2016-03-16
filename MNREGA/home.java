@@ -362,7 +362,7 @@ class JHome{
 						d_o_i = date_Of_Issue.getText();
 						pa_n = panchayat_Name.getText();
 						r_p_m_n = recived_Panchayat_member_name.getText();
-						m = String.valueOf(money.getText());
+						m = Integer.parseInt(money.getText());
 
 						try{
 							Class.forName(driver_url).newInstance();
@@ -370,7 +370,10 @@ class JHome{
 							System.out.println("Database connected Successfully.");
 							System.out.println("Inserting");
 							stmt = conn.createStatement();
-		//incomplete					String sql = "insert into project_by_BDO (Project_Name,Signed_BDO_Name,)"
+							String sql = "insert into project_by_BDO (Project_Name,Signed_BDO_Name,Panchayat_Name,Recived_Panchayat_member_name,Money)values('"+p_n+"','"+bdo_s_n+"','"+pa_n+"','"+r_p_m_n+"','"+m+"');";
+							stmt.executeUpdate(sql);
+							System.out.println("Submit successfully.");
+
 
 							conn.close();
 						}
