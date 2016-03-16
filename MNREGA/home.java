@@ -20,7 +20,7 @@ class JError{
 		mm.setResizable(false);	
 		mm.setSize(350,100);
 	}	
-}
+} 
 
 class JHome{
 	private static JHome home_obj = new JHome();
