@@ -15,7 +15,7 @@ public class GPM{
 
 				JTextField login_text_emailid = new JTextField("Email Id");
 				JPasswordField login_text_password = new JPasswordField("Password");
-				
+
 				JButton login_btn = new JButton("Login");
 				JButton back = new JButton("Back");
 
@@ -50,6 +50,51 @@ public class GPM{
 
 
 
+
+
+				Object rowData[][] = { 
+												   { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
+      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" }
+      										};
+
+   							 Object columnNames[] = { "No", "Project Name","BDO Head Name"};
+
+   							 
+    						JTable table = new JTable(rowData, columnNames);
+
+    						JScrollPane scrollPane = new JScrollPane(table);
+    						frame.add(scrollPane, BorderLayout.SOUTH);;
+    						scrollPane.setVisible(false);
+    						scrollPane.setBounds(100,180,700,300);
+
+
+
+
+
+
+
+
 					//action listener
 				MouseAdapter login_listener = new MouseAdapter(){
 					public void mouseClicked(MouseEvent e){
@@ -75,6 +120,7 @@ public class GPM{
 							login_password.setVisible(false);
 							login_btn.setVisible(false);
 							back.setVisible(true);
+							scrollPane.setVisible(true);
 						}
 						else if("".equals(login_text_emailid.getText())){
 							System.out.println("blank");
@@ -95,6 +141,7 @@ public class GPM{
 						login_password.setVisible(true);
 						login_btn.setVisible(true);
 						back.setVisible(false);
+						scrollPane.setVisible(false);
 											}
 				};
 
