@@ -12,6 +12,10 @@ public class GPM{
 				JFrame frame = new JFrame("The Mahatma Gandhi National Rural Employment Guarantee Act");
 				JLabel login_emailid = new JLabel("Email Id");
 				JLabel login_password = new JLabel("Password");
+
+				JTextField login_text_emailid = new JTextField("Email Id");
+				JPasswordField login_text_password = new JPasswordField("Password");
+				
 				JButton login_btn = new JButton("Login");
 				JButton back = new JButton("Back");
 
@@ -100,7 +104,11 @@ public class GPM{
 				login_btn.addActionListener(listener);
 				back.addActionListener(listener_back);
 
-
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);	
+				frame.setSize(900,600);		
 
 
 			}//end run method
