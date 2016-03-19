@@ -55,6 +55,48 @@ public class GPM{
 					
 				};
 
+				ActionListener listener = new ActionListener(){
+					public void actionPerformed(ActionEvent e){
+						if(username.equals(login_text_emailid.getText()) && password.equals(login_text_password.getText())){
+							System.out.println("success!!");
+							login_text_emailid.setVisible(false);
+							login_text_password.setVisible(false);
+							login_emailid.setVisible(false);
+							login_password.setVisible(false);
+							login_btn.setVisible(false);
+							back.setVisible(true);
+						}
+						else if("".equals(login_text_emailid.getText())){
+							System.out.println("blank");
+						}
+						else{
+							System.out.println("Errot:");
+							JError  lerr = new JError();
+							lerr.login_error();
+						}
+					}
+				};
+
+				ActionListener listener_back = new ActionListener(){
+					public void actionPerformed(ActionEvent e){
+						login_text_emailid.setVisible(true);
+						login_text_password.setVisible(true);
+						login_emailid.setVisible(true);
+						login_password.setVisible(true);
+						login_btn.setVisible(true);
+						back.setVisible(false);
+											}
+				};
+
+
+				login_text_emailid.addMouseListener(login_listener);
+				login_text_password.addMouseListener(password_listener);
+				login_btn.addActionListener(listener);
+				back.addActionListener(listener_back);
+
+
+
+
 			}//end run method
 		};//end runnable interface
 		run.run();
