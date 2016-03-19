@@ -13,6 +13,7 @@ public class GPM{
 				JLabel login_emailid = new JLabel("Email Id");
 				JLabel login_password = new JLabel("Password");
 				JButton login_btn = new JButton("Login");
+				JButton back = new JButton("Back");
 
 				String username="admin";
 				String password="pass";
@@ -37,6 +38,11 @@ public class GPM{
 				//button
 				login_btn.setBounds(380,380,120,50);
 				frame.add(login_btn);
+
+
+				back.setBounds(380,30,120,20);
+				frame.add(back);
+				back.setVisible(false);
 
 
 
