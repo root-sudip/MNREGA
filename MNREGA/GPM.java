@@ -37,8 +37,26 @@ public class GPM{
 				//button
 				login_btn.setBounds(380,380,120,50);
 				frame.add(login_btn);
-			}
-		};
+
+
+
+					//action listener
+				MouseAdapter login_listener = new MouseAdapter(){
+					public void mouseClicked(MouseEvent e){
+						login_text_emailid.setText("");
+					}
+					
+				};
+
+				MouseAdapter password_listener = new MouseAdapter(){
+					public void mouseClicked(MouseEvent e){
+						login_text_password.setText("");
+					}
+					
+				};
+
+			}//end run method
+		};//end runnable interface
 		run.run();
 	}
 }
