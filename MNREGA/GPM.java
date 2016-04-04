@@ -16,8 +16,14 @@ public class GPM{
 				JTextField login_text_emailid = new JTextField("Email Id");
 				JPasswordField login_text_password = new JPasswordField("Password");
 
+
+				JTextField search_p = new JTextField("Enter Panchayet name");
+
 				JButton login_btn = new JButton("Login");
 				JButton back = new JButton("Back");
+				JButton search_button = new JButton("Search");
+				JButton assign_project = new JButton("Assign Project");
+				JButton create_emp_detail = new JButton("Create emp Deatail");
 
 				String username="admin";
 				String password="pass";
@@ -48,34 +54,29 @@ public class GPM{
 				frame.add(back);
 				back.setVisible(false);
 
+				search_p.setBounds(230,70,300,30);
+				frame.add(search_p);
+				search_p.setVisible(false);
+
+				search_button.setBounds(550,65,100,40);
+				frame.add(search_button);
+				search_button.setVisible(false);
+
+				assign_project.setBounds(50,30,150,30);
+				frame.add(assign_project);
+				assign_project.setVisible(false);
+
+				create_emp_detail.setBounds(600,30,200,30);
+				frame.add(create_emp_detail);
+				create_emp_detail.setVisible(false);
+
+
+
 
 
 
 
 				Object rowData[][] = { 
-												   { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" }
       										};
 
    							 Object columnNames[] = { "No", "Project Name","BDO Head Name"};
@@ -110,6 +111,13 @@ public class GPM{
 					
 				};
 
+				MouseAdapter search_listener = new MouseAdapter(){
+					public void mouseClicked(MouseEvent e){
+						search_p.setText("");
+					}
+					
+				};
+
 				ActionListener listener = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
 						if(username.equals(login_text_emailid.getText()) && password.equals(login_text_password.getText())){
@@ -121,6 +129,10 @@ public class GPM{
 							login_btn.setVisible(false);
 							back.setVisible(true);
 							scrollPane.setVisible(true);
+							search_p.setVisible(true);
+							search_button.setVisible(true);
+							assign_project.setVisible(true);
+							create_emp_detail.setVisible(true);
 						}
 						else if("".equals(login_text_emailid.getText())){
 							System.out.println("blank");
@@ -142,12 +154,17 @@ public class GPM{
 						login_btn.setVisible(true);
 						back.setVisible(false);
 						scrollPane.setVisible(false);
+						search_p.setVisible(false);
+						search_button.setVisible(false);
+						assign_project.setVisible(false);
+						create_emp_detail.setVisible(false);
 						}
 				};
 
 
 				login_text_emailid.addMouseListener(login_listener);
 				login_text_password.addMouseListener(password_listener);
+				search_p.addMouseListener(search_listener);
 				login_btn.addActionListener(listener);
 				back.addActionListener(listener_back);
 
