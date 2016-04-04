@@ -67,6 +67,9 @@ class JHome{
 				String username="admin";
 				String password="pass";
 
+				
+
+
 
 				frame.setLayout(null);
 				
@@ -207,13 +210,8 @@ class JHome{
     						scrollPane.setVisible(false);
     						scrollPane.setBounds(100,180,700,300);
 
-
-
 				///end exp
 
-
-
-				
 				//action listener
 				MouseAdapter login_listener = new MouseAdapter(){
 					public void mouseClicked(MouseEvent e){
@@ -240,8 +238,31 @@ class JHome{
 
 				ActionListener listener = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
-						if(username.equals(login_text_emailid.getText()) && password.equals(login_text_password.getText())){
-							System.out.println("success!!");
+						//user login
+				Connection conn = null;
+				Statement stmt = null;
+				String url = "jdbc:mysql://localhost:3306/MNREGA";
+				String driver = "com.mysql.jdbc.Driver";
+        		String userName = "root"; 
+        		String passWord = "sudipdas";
+        		ResultSet rs=null;
+
+				try {
+        				Class.forName(driver).newInstance();
+        				conn = DriverManager.getConnection(url,userName,passWord);
+        				System.out.println("Connected to the database");
+         				stmt = conn.createStatement();
+
+         				String sql ="select * from BDO_info where password ='"+login_text_password.getText() +"'";
+
+
+        				PreparedStatement ps=conn.prepareStatement(sql);
+     		 //rs = stmt.executeQuery(sql);
+      					rs=ps.executeQuery();
+
+     		 			if(rs.next()){
+
+     		 				System.out.println("success");
 							login_text_emailid.setVisible(false);
 							login_text_password.setVisible(false);
 							login_emailid.setVisible(false);
@@ -252,15 +273,19 @@ class JHome{
 							search_p.setVisible(true);
 							search_button.setVisible(true);
 							scrollPane.setVisible(true);
-						}
-						else if("".equals(login_text_emailid.getText())){
-							System.out.println("blank");
-						}
-						else{
-							System.out.println("Errot:");
+     		 			}
+     		 			else{
+     		 				System.out.println("Errot:");
 							JError  lerr = new JError();
 							lerr.login_error();
-						}
+     		 			}
+     		 
+        					conn.close();
+        					System.out.println("Disconnected from database");
+        			} catch (Exception ee) {
+        					ee.printStackTrace();
+        			}
+
 					}
 				};
 
@@ -414,3 +439,7 @@ public class home{
 		obj.runner.run();
 		
 	}
+}
+
+
+//java -cp .:mysql-connector-java-5.1.18-bin.jar home
