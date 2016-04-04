@@ -24,6 +24,19 @@ public class GPM{
 				JButton search_button = new JButton("Search");
 				JButton assign_project = new JButton("Assign Project");
 				JButton create_emp_detail = new JButton("Create emp Deatail");
+				JButton emp_back = new JButton("Back");
+				JButton emp_detail_submit = new JButton("Submit");
+
+
+				JLabel l_emp_name = new JLabel("Name");
+				JLabel l_emp_address = new JLabel("Address");
+				JLabel l_dob = new JLabel("Date of Brirth");
+				JLabel l_contact = new JLabel("Mobile Number");
+
+				JTextField t_emp_name = new JTextField();
+				JTextField t_emp_address =  new JTextField();
+				JTextField t_dob = new JTextField();
+				JTextField t_contact = new JTextField();
 
 				String username="admin";
 				String password="pass";
@@ -69,6 +82,56 @@ public class GPM{
 				create_emp_detail.setBounds(600,30,200,30);
 				frame.add(create_emp_detail);
 				create_emp_detail.setVisible(false);
+
+				emp_back.setBounds(380,30,120,20);
+				frame.add(emp_back);
+				emp_back.setVisible(false);
+
+
+				l_emp_name.setBounds(200,120,120,20);
+				frame.add(l_emp_name);
+				l_emp_name.setVisible(false);
+
+
+				l_emp_address.setBounds(200,190,120,20);
+				frame.add(l_emp_address);
+				l_emp_address.setVisible(false);
+
+
+				l_dob.setBounds(200,260,120,20);
+				frame.add(l_dob);
+				l_dob.setVisible(false);
+
+
+				l_contact.setBounds(200,330,120,20);
+				frame.add(l_contact);
+				l_contact.setVisible(false);
+
+
+				t_emp_name.setBounds(400,120,300,30);
+				frame.add(t_emp_name);
+				t_emp_name.setVisible(false);
+
+				t_emp_address.setBounds(400,190,300,30);
+				frame.add(t_emp_address);
+				t_emp_address.setVisible(false);
+
+
+				t_dob.setBounds(400,260,300,30);
+				frame.add(t_dob);
+				t_dob.setVisible(false);
+
+				t_contact.setBounds(400,330,300,30);
+				frame.add(t_contact);
+				t_contact.setVisible(false);
+
+				emp_detail_submit.setBounds(380,400,120,50);
+				frame.add(emp_detail_submit);
+				emp_detail_submit.setVisible(false);
+
+
+
+
 
 
 
@@ -133,6 +196,7 @@ public class GPM{
 							search_button.setVisible(true);
 							assign_project.setVisible(true);
 							create_emp_detail.setVisible(true);
+
 						}
 						else if("".equals(login_text_emailid.getText())){
 							System.out.println("blank");
@@ -161,12 +225,56 @@ public class GPM{
 						}
 				};
 
+				ActionListener create_emp_detail_listener = new ActionListener(){
+					public void actionPerformed(ActionEvent ae){
+						back.setVisible(false);
+						scrollPane.setVisible(false);
+						search_p.setVisible(false);
+						search_button.setVisible(false);
+						assign_project.setVisible(false);
+						create_emp_detail.setVisible(false);
+						emp_back.setVisible(true);
+						l_emp_name.setVisible(true);
+						l_emp_address.setVisible(true);
+						l_dob.setVisible(true);
+						l_contact.setVisible(true);
+						t_emp_name.setVisible(true);
+						t_emp_address.setVisible(true);
+						t_dob.setVisible(true);
+						t_contact.setVisible(true);
+						emp_detail_submit.setVisible(true);
+
+					}
+				};
+
+				ActionListener emp_back_listener = new ActionListener(){
+					public void actionPerformed(ActionEvent ae){
+						back.setVisible(true);
+						scrollPane.setVisible(true);
+						search_p.setVisible(true);
+						search_button.setVisible(true);
+						assign_project.setVisible(true);
+						create_emp_detail.setVisible(true);
+						emp_back.setVisible(false);
+						l_emp_address.setVisible(false);
+						l_dob.setVisible(false);
+						l_contact.setVisible(false);
+						t_emp_name.setVisible(false);
+						t_emp_address.setVisible(false);
+						t_dob.setVisible(false);
+						t_contact.setVisible(false);
+						emp_detail_submit.setVisible(false);
+					}
+				};
+
 
 				login_text_emailid.addMouseListener(login_listener);
 				login_text_password.addMouseListener(password_listener);
 				search_p.addMouseListener(search_listener);
 				login_btn.addActionListener(listener);
 				back.addActionListener(listener_back);
+				create_emp_detail.addActionListener(create_emp_detail_listener);
+				emp_back.addActionListener(emp_back_listener);
 
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setLocationRelativeTo(null);
