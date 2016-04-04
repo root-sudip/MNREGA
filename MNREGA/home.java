@@ -175,29 +175,6 @@ class JHome{
 
 				//exp
 							Object rowData[][] = { 
-												   { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" },
-      											   { "Row2-Column1", "Row2-Column2", "Row2-Column3" }
       										};
 
    							 Object columnNames[] = { "No", "Project Name","BDO Head Name"};
@@ -206,7 +183,7 @@ class JHome{
     						JTable table = new JTable(rowData, columnNames);
 
     						JScrollPane scrollPane = new JScrollPane(table);
-    						frame.add(scrollPane, BorderLayout.SOUTH);;
+    						frame.add(scrollPane, BorderLayout.SOUTH);
     						scrollPane.setVisible(false);
     						scrollPane.setBounds(100,180,700,300);
 
@@ -369,43 +346,87 @@ class JHome{
 
 				ActionListener project_submit_listener = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
-						String u_name_mysql = "root";
-						String pass_mysql = "sudipdas";
-						String driver_url = "com.mysql.jdbc.Driver";
-						String db_url = "jdbc:mysql://localhost:3306/MNREGA";
-						Connection conn= null;
-						Statement stmt = null;
-						String p_n;
-						String bdo_s_n;
-						String d_o_i;
-						String pa_n;
-						String r_p_m_n;
-						int m;
+						//AFTER
 
-						p_n = project_name.getText();
-						bdo_s_n = signed_BDO_Name.getText();
-						d_o_i = date_Of_Issue.getText();
-						pa_n = panchayat_Name.getText();
-						r_p_m_n = recived_Panchayat_member_name.getText();
-						m = Integer.parseInt(money.getText());
-
-						try{
-							Class.forName(driver_url).newInstance();
-							conn = DriverManager.getConnection(db_url,u_name_mysql,pass_mysql);
-							System.out.println("Database connected Successfully.");
-							System.out.println("Inserting");
-							stmt = conn.createStatement();
-							String sql = "insert into project_by_BDO (Project_Name,Signed_BDO_Name,Date_Of_Issue,Panchayat_Name,Recived_Panchayat_member_name,Money)values('"+p_n+"','"+bdo_s_n+"','"+d_o_i+"','"+pa_n+"','"+r_p_m_n+"','"+m+"');";
-							stmt.executeUpdate(sql);
-							System.out.println("Submit successfully.");
+					}
+				};
 
 
-							conn.close();
+				ActionListener bdo_search_listener = new ActionListener(){
+					public void actionPerformed(ActionEvent ae){
+						if("L_PROJECT".equals(search_p.getText())){
+							System.out.println("got event");
+							//
+
+							Connection conn = null;
+							Statement stmt = null;
+							String url = "jdbc:mysql://localhost:3306/MNREGA";
+							String driver = "com.mysql.jdbc.Driver";
+        					String userName = "root"; 
+        					String passWord = "sudipdas";
+        					ResultSet rs=null;
+        					scrollPane.setVisible(false);
+        					//
+
+        					try{
+
+        						Class.forName("com.mysql.jdbc.Driver");
+        						conn = DriverManager.getConnection(url,userName,passWord);
+        						stmt = conn.createStatement();
+        						String sql ="select * from BDO_project";/////have to write
+        						rs = stmt.executeQuery(sql);
+        						int i=1,j=1;
+
+        						
+        						///
+        						Object[][] rowData = new Object[1000][6];
+
+   							 	Object columnNames[] = { "ID", "BDO Name","Project Name","GPN","Money","GPMN"};
+    						while(rs.next()){
+    					
+    							//int id = rs.getInt("id");
+    							rowData[j][0] = rs.getInt("id");
+    							//String BDO_name = rs.getString("BDO_name");
+    							rowData[j][1] = rs.getString("BDO_name");
+    							//String GNP_p = rs.getString("GPN");
+    							rowData[j][2] = rs.getString("project_name");
+    							rowData[j][3] = rs.getString("GPN");
+    							//Double BDO_money = rs.getDouble("money");
+    							rowData[j][4] = rs.getDouble("money");
+    							//String GPM_n = rs.getString("GPMN");
+    							rowData[j][5] = rs.getString("GPMN");
+    							/*System.out.println(BDO_money);*/
+    								j++;
+    						}
+
+    						JTable table = new JTable(rowData, columnNames);
+
+    						JScrollPane p_l_scrollPane = new JScrollPane(table);
+    						frame.add(p_l_scrollPane, BorderLayout.SOUTH);;
+    						p_l_scrollPane.setVisible(true);
+    						p_l_scrollPane.setBounds(100,180,700,300);
+    						rs.close();
+
+        						///
+
+        					}catch(Exception ee){
+        						ee.printStackTrace();
+        					}
+
+							//
+
 						}
-						catch(Exception ex){
-							ex.printStackTrace();
-						}
+						else if("V_GPM".equals(search_p.getText())){
+							System.out.println("got view");
 
+
+
+
+
+						}
+						else{
+							System.out.println("Blank");
+						}
 					}
 				};
 
@@ -418,6 +439,8 @@ class JHome{
 				ctrate_project.addActionListener(listener_create_p);
 				p_back.addActionListener(create_p_back);
 				project_submit.addActionListener(project_submit_listener);
+				search_button.addActionListener(bdo_search_listener);
+
 
 				
 				
