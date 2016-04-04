@@ -267,6 +267,36 @@ public class GPM{
 					}
 				};
 
+				ActionListener emp_detail_submit_listener = new ActionListener(){
+					public void actionPerformed(ActionEvent){
+						Connection conn = null;
+				Statement stmt = null;
+				String url = "jdbc:mysql://localhost:3306/MNREGA";
+				String driver = "com.mysql.jdbc.Driver";
+        		String userName = "root"; 
+        		String passWord = "sudipdas";
+        		ResultSet rs=null;
+
+				try {
+        				Class.forName(driver).newInstance();
+        				conn = DriverManager.getConnection(url,userName,passWord);
+        				System.out.println("Connected to the database");
+         				stmt = conn.createStatement();
+
+         				String sql ="select * from BDO_info where password ='"+login_text_password.getText() +"'";
+
+
+        					conn.close();
+        					System.out.println("Disconnected from database");
+        			} catch (Exception ee) {
+        					ee.printStackTrace();
+        			}
+
+        			
+					}
+				};	
+
+
 
 				login_text_emailid.addMouseListener(login_listener);
 				login_text_password.addMouseListener(password_listener);
@@ -275,6 +305,7 @@ public class GPM{
 				back.addActionListener(listener_back);
 				create_emp_detail.addActionListener(create_emp_detail_listener);
 				emp_back.addActionListener(emp_back_listener);
+				emp_detail_submit.addActionListener(emp_detail_submit_listener);
 
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setLocationRelativeTo(null);
