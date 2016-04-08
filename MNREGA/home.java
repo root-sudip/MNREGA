@@ -63,7 +63,6 @@ class JHome{
 
 				JButton project_submit = new JButton("Submit");
 
-
 				String username="admin";
 				String password="pass";
 
@@ -73,15 +72,9 @@ class JHome{
    				Object j_columnNames[] = { "ID", "BDO Name","Project Name","GPN","Money","GPMN"};
 
    				JTable j_table = new JTable(j_rowData, j_columnNames);
-
     			JScrollPane j_p_l_scrollPane = new JScrollPane(j_table);
 
-				
-
-
-
 				frame.setLayout(null);
-				
 				
 				login_emailid.setBounds(300,150,100,100);
 				frame.add(login_emailid);
@@ -180,14 +173,9 @@ class JHome{
 				frame.add(project_submit);
 				project_submit.setVisible(false);
 
-
-
 				//exp
-							Object rowData[][] = { 
-      										};
-
+							Object rowData[][] = { };
    							 Object columnNames[] = { "No", "Project Name","BDO Head Name"};
-
    							 
     						JTable table = new JTable(rowData, columnNames);
 
@@ -195,30 +183,24 @@ class JHome{
     						frame.add(scrollPane, BorderLayout.SOUTH);
     						scrollPane.setVisible(false);
     						scrollPane.setBounds(100,180,700,300);
-
 				///end exp
-
 				//action listener
 				MouseAdapter login_listener = new MouseAdapter(){
 					public void mouseClicked(MouseEvent e){
 						login_text_emailid.setText("");
 					}
-					
 				};
 
 				MouseAdapter password_listener = new MouseAdapter(){
 					public void mouseClicked(MouseEvent e){
 						login_text_password.setText("");
 					}
-					
 				};
-
 
 				MouseAdapter search_listener = new MouseAdapter(){
 					public void mouseClicked(MouseEvent e){
 						search_p.setText("");
 					}
-					
 				};
 
 
@@ -240,7 +222,6 @@ class JHome{
          				stmt = conn.createStatement();
 
          				String sql ="select * from BDO_info where password ='"+login_text_password.getText() +"'";
-
 
         				PreparedStatement ps=conn.prepareStatement(sql);
      		 //rs = stmt.executeQuery(sql);
@@ -271,7 +252,6 @@ class JHome{
         			} catch (Exception ee) {
         					ee.printStackTrace();
         			}
-
 					}
 				};
 
@@ -289,10 +269,6 @@ class JHome{
 						scrollPane.setVisible(false);
 					}
 				};
-
-				
-
-
 				//create project 
 				ActionListener listener_create_p = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
@@ -351,16 +327,13 @@ class JHome{
 
 					}
 				};
-
 //java jdbc conntion ....insert data to the database after clicking to the submit bttn
-
 				ActionListener project_submit_listener = new ActionListener(){
 					public void actionPerformed(ActionEvent e){
 						//AFTER
 
 					}
 				};
-
 
 				ActionListener bdo_search_listener = new ActionListener(){
 					public void actionPerformed(ActionEvent ae){
@@ -386,7 +359,6 @@ class JHome{
         						String sql ="select * from BDO_project";/////have to write
         						rs = stmt.executeQuery(sql);
         						int i=1,j=1;
-
         						
         						///
         						
@@ -407,7 +379,6 @@ class JHome{
     								j++;
     						}
 
-    						
     						frame.add(j_p_l_scrollPane, BorderLayout.SOUTH);;
     						j_p_l_scrollPane.setVisible(true);
     						j_p_l_scrollPane.setBounds(100,180,700,300);
@@ -424,11 +395,6 @@ class JHome{
 						}
 						else if("V_GPM".equals(search_p.getText())){
 							System.out.println("got view");
-
-
-
-
-
 						}
 						else{
 							System.out.println("Blank");
@@ -448,9 +414,6 @@ class JHome{
 				p_back.addActionListener(create_p_back);
 				project_submit.addActionListener(project_submit_listener);
 				search_button.addActionListener(bdo_search_listener);
-
-
-				
 				
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setLocationRelativeTo(null);
