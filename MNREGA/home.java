@@ -74,6 +74,15 @@ class JHome{
    				JTable j_table = new JTable(j_rowData, j_columnNames);
     			JScrollPane j_p_l_scrollPane = new JScrollPane(j_table);
 
+//new
+    			Object[][] gpm_l_rowData = new Object[1000][3];
+
+   				Object gpm_l_columnNames[] = { "FULL NAME", "CONTACT","GP Name"};
+
+   				JTable gpm_l_table = new JTable(gpm_l_rowData, gpm_l_columnNames);
+    			JScrollPane gpm_l_p_l_scrollPane = new JScrollPane(gpm_l_table);
+
+//end_new
 				frame.setLayout(null);
 				
 				login_emailid.setBounds(300,150,100,100);
@@ -296,6 +305,7 @@ class JHome{
 						l_duration.setVisible(true);
 						project_submit.setVisible(true);
 						j_p_l_scrollPane.setVisible(false);
+						gpm_l_p_l_scrollPane.setVisible(false);
 					}
 				};
 
@@ -393,8 +403,57 @@ class JHome{
 							//
 
 						}
-						else if("V_GPM".equals(search_p.getText())){
+//error start
+						else if("L_GPM".equals(search_p.getText())){
 							System.out.println("got view");
+							Connection conn = null;
+							Statement stmt = null;
+							String url = "jdbc:mysql://localhost:3306/MNREGA";
+							String driver = "com.mysql.jdbc.Driver";
+        					String userName = "root"; 
+        					String passWord = "sudipdas";
+        					ResultSet rs=null;
+        					scrollPane.setVisible(false);
+        					j_p_l_scrollPane.setVisible(false);
+        					//
+        					gpm_l_p_l_scrollPane.setVisible(true);
+
+        					try{
+
+        						Class.forName("com.mysql.jdbc.Driver");
+        						conn = DriverManager.getConnection(url,userName,passWord);
+        						stmt = conn.createStatement();
+        						String sql ="select * from GPM_name";/////have to write
+        						rs = stmt.executeQuery(sql);
+        						int i=1,j=1;
+        						
+        						///
+        						
+    						while(rs.next()){
+    					
+    							//int id = rs.getInt("id");
+    							gpm_l_rowData[j][0] = rs.getString("fullname");
+    							System.out.println(rs.getString("fullname"));
+    							//String BDO_name = rs.getString("BDO_name");
+    							gpm_l_rowData[j][1] = rs.getString("contact");
+    							//String GNP_p = rs.getString("GPN");
+    							gpm_l_rowData[j][2] = rs.getString("gpn");
+    							
+    							/*System.out.println(BDO_money);*/
+    								j++;
+    						}
+
+    						frame.add(gpm_l_p_l_scrollPane, BorderLayout.SOUTH);;
+    						gpm_l_p_l_scrollPane.setVisible(true);
+    						gpm_l_p_l_scrollPane.setBounds(100,180,700,300);
+    						rs.close();
+
+        						///
+
+        					}catch(Exception ee){
+        						ee.printStackTrace();
+        					}
+
 						}
 						else{
 							System.out.println("Blank");
@@ -402,7 +461,7 @@ class JHome{
 					}
 				};
 
-
+//end error
 				//end create project 
 				login_text_emailid.addMouseListener(login_listener);
 				login_text_password.addMouseListener(password_listener);
