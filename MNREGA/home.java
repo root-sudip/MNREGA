@@ -67,6 +67,15 @@ class JHome{
 				String username="admin";
 				String password="pass";
 
+
+				Object[][] j_rowData = new Object[1000][6];
+
+   				Object j_columnNames[] = { "ID", "BDO Name","Project Name","GPN","Money","GPMN"};
+
+   				JTable j_table = new JTable(j_rowData, j_columnNames);
+
+    			JScrollPane j_p_l_scrollPane = new JScrollPane(j_table);
+
 				
 
 
@@ -310,6 +319,7 @@ class JHome{
 						l_money.setVisible(true);
 						l_duration.setVisible(true);
 						project_submit.setVisible(true);
+						j_p_l_scrollPane.setVisible(false);
 					}
 				};
 
@@ -379,32 +389,28 @@ class JHome{
 
         						
         						///
-        						Object[][] rowData = new Object[1000][6];
-
-   							 	Object columnNames[] = { "ID", "BDO Name","Project Name","GPN","Money","GPMN"};
+        						
     						while(rs.next()){
     					
     							//int id = rs.getInt("id");
-    							rowData[j][0] = rs.getInt("id");
+    							j_rowData[j][0] = rs.getInt("id");
     							//String BDO_name = rs.getString("BDO_name");
-    							rowData[j][1] = rs.getString("BDO_name");
+    							j_rowData[j][1] = rs.getString("BDO_name");
     							//String GNP_p = rs.getString("GPN");
-    							rowData[j][2] = rs.getString("project_name");
-    							rowData[j][3] = rs.getString("GPN");
+    							j_rowData[j][2] = rs.getString("project_name");
+    							j_rowData[j][3] = rs.getString("GPN");
     							//Double BDO_money = rs.getDouble("money");
-    							rowData[j][4] = rs.getDouble("money");
+    							j_rowData[j][4] = rs.getDouble("money");
     							//String GPM_n = rs.getString("GPMN");
-    							rowData[j][5] = rs.getString("GPMN");
+    							j_rowData[j][5] = rs.getString("GPMN");
     							/*System.out.println(BDO_money);*/
     								j++;
     						}
 
-    						JTable table = new JTable(rowData, columnNames);
-
-    						JScrollPane p_l_scrollPane = new JScrollPane(table);
-    						frame.add(p_l_scrollPane, BorderLayout.SOUTH);;
-    						p_l_scrollPane.setVisible(true);
-    						p_l_scrollPane.setBounds(100,180,700,300);
+    						
+    						frame.add(j_p_l_scrollPane, BorderLayout.SOUTH);;
+    						j_p_l_scrollPane.setVisible(true);
+    						j_p_l_scrollPane.setBounds(100,180,700,300);
     						rs.close();
 
         						///
@@ -430,6 +436,7 @@ class JHome{
 					}
 				};
 
+
 				//end create project 
 				login_text_emailid.addMouseListener(login_listener);
 				login_text_password.addMouseListener(password_listener);
@@ -437,6 +444,7 @@ class JHome{
 				login_btn.addActionListener(listener);
 				back.addActionListener(listener_back);
 				ctrate_project.addActionListener(listener_create_p);
+				
 				p_back.addActionListener(create_p_back);
 				project_submit.addActionListener(project_submit_listener);
 				search_button.addActionListener(bdo_search_listener);
